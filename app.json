@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "DreamSteps",
+    "description": "Team FrostFall's HackCMU Gamification Project",
+    "privacy": "public",
+    "platforms": ["ios"],
+    "version": "0.0.0",
+    "orientation": "landscape",
+    "primaryColor": "#fff",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "backgroundColor": "#fff",
+      "image": "./assets/icon.png",
+      "resizeMode": "contain"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["assets/**/*"],
+    "ios": {
+      "infoPlist": {
+        "NSHealthShareUsageDescription": "Read and understand health data",
+        "NSHealthUpdateUsageDescription": "Share workout data with other apps.",
+        "UIBackgroundModes": ["audio"]
+      }
+    },
+    "plugins": []
+  }
+}
