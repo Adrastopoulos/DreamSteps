@@ -3,7 +3,7 @@
     "name": "DreamSteps",
     "description": "Team FrostFall's HackCMU Gamification Project",
     "privacy": "public",
-    "platforms": ["ios"],
+    "platforms": ["ios", "web"],
     "version": "0.0.0",
     "orientation": "landscape",
     "primaryColor": "#fff",

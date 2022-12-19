@@ -63,7 +63,7 @@ const HomeScreen: FC<NativeStackHeaderProps> = ({ navigation }) => {
             onPress={() => navigation.navigate("Play")}
           >
             <Text className="font-[thicc] font-bold text-4xl text-black">
-              Play
+              Play!
             </Text>
           </TouchableHighlight>
           <View className="m-2 flex flex-col">

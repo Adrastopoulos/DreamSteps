@@ -11,7 +11,7 @@ type ItemProps = {
 };
 
 const Item: FC<ItemProps> = ({ rank, name, sleep, steps }) => (
-  <View className="w-full flex flex-row items-center justify-around bg-teal-300 border-b-4 border-r-4 mx-auto my-2 rounded-lg">
+  <View className="w-full flex flex-row items-center justify-evenly  bg-teal-300 border-b-4 border-r-4 mx-auto my-2 rounded-lg">
     <Text className="font-bold text-3xl font-[rainyhearts]">{rank}</Text>
     <Text className="font-bold text-4xl font-[rainyhearts]">{name}</Text>
     <Text className="font-bold text-3xl font-[rainyhearts]">{sleep}</Text>
@@ -35,7 +35,7 @@ const LeaderboardScreen: FC<NativeStackHeaderProps> = ({ navigation }) => {
         </TouchableHighlight>
         <Text className="mx-auto font-[thicc] text-4xl">Leaderboard</Text>
       </View>
-      <View className="w-full flex flex-row items-center justify-around p-3 bg-teal-500 border-b-4 border-r-4 mx-auto my-2 rounded-lg">
+      <View className="w-full p-3 bg-teal-500 border-b-4 border-r-4 mx-auto my-2 rounded-lg items-center flex flex-row justify-evenly">
         <Text className="font-[thicc]">Rank</Text>
         <Text className="font-[thicc]">Name</Text>
         <Text className="font-[thicc]">Sleep</Text>

@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { Animated, Image } from "react-native";
 
 const CloudsMoving: FC<{
@@ -9,44 +9,41 @@ const CloudsMoving: FC<{
   scale: number;
 }> = ({ offsetX, offsetY, delay, translation, scale }) => {
   const state = {
-    height: new Animated.Value(offsetY),
-    horizontal: new Animated.Value(offsetX),
+    xy: new Animated.ValueXY({ x: offsetX, y: offsetY }),
     scale: new Animated.Value(scale),
   };
 
-  const _start = () => {
+  useEffect(() => {
     Animated.loop(
       Animated.sequence([
-        Animated.timing(state.height, {
+        Animated.timing(state.xy.y, {
+          useNativeDriver: true,
           toValue: translation,
-          duration: 5000,
+          duration: 3000,
           delay,
-          useNativeDriver: true,
         }),
-        Animated.timing(state.height, {
-          toValue: 0,
-          duration: 5000,
+        Animated.timing(state.xy.y, {
           useNativeDriver: true,
+          toValue: 0,
+          duration: 3000,
         }),
       ])
     ).start();
-  };
-
-  _start();
+  }, []);
 
   return (
     <Animated.View
       style={{
         transform: [
-          { translateY: state.height },
-          { translateX: state.horizontal },
+          { translateX: state.xy.x },
+          { translateY: state.xy.y },
           { scale: state.scale },
         ],
       }}
     >
       <Image
         source={require("../../assets/clouds.png")}
-        className={`absolute`}
+        className="absolute"
       />
     </Animated.View>
   );
